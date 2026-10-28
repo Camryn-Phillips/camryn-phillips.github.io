@@ -1,0 +1,112 @@
+/* Site-specific additions on top of the Dimension template (main.css). */
+
+/* Web-sized background instead of the 5 MB original */
+#bg:after {
+	background-image: url("../../images/web/bg.jpg");
+}
+
+/* Headshot: keep it from filling the whole article */
+.image.headshot {
+	display: block;
+	width: 60%;
+	max-width: 18rem;
+	margin: 0 auto 2rem auto;
+}
+
+.image.headshot img {
+	width: 100%;
+	border-radius: 50%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	object-position: center 30%;
+}
+
+/* Gallery */
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+	gap: 0.75rem;
+	margin: 0 0 2rem 0;
+	padding: 0;
+	list-style: none;
+}
+
+.gallery li {
+	padding: 0;
+	margin: 0;
+}
+
+.gallery a {
+	display: block;
+	border-bottom: 0;
+	text-align: center;
+}
+
+.gallery img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border-radius: 4px;
+	transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.gallery a:hover img {
+	transform: scale(1.03);
+	opacity: 0.85;
+}
+
+.gallery span {
+	display: block;
+	font-size: 0.7rem;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	line-height: 1.4;
+	margin-top: 0.4rem;
+}
+
+/* Lightbox */
+#lightbox {
+	max-width: 92vw;
+	max-height: 92vh;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #fff;
+	text-align: center;
+}
+
+#lightbox::backdrop {
+	background: rgba(19, 21, 25, 0.92);
+}
+
+#lightbox img {
+	display: block;
+	max-width: 92vw;
+	max-height: 84vh;
+	margin: 0 auto;
+	border-radius: 4px;
+}
+
+#lightbox p {
+	margin: 0.75rem 0 0 0;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+}
+
+/* Contact links */
+ul.contact-links {
+	list-style: none;
+	padding: 0;
+}
+
+ul.contact-links li {
+	padding-left: 0;
+	margin-bottom: 0.75rem;
+}
+
+ul.contact-links .icon {
+	margin-right: 0.75rem;
+	border-bottom: 0;
+}
