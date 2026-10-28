@@ -5,20 +5,49 @@
 	background-image: url("../../images/web/bg.jpg");
 }
 
-/* Headshot: keep it from filling the whole article */
-.image.headshot {
-	display: block;
-	width: 60%;
-	max-width: 18rem;
-	margin: 0 auto 2rem auto;
+/* Headshot in the front-page circle (replaces the template's icon logo) */
+#header .logo.headshot {
+	width: 11rem;
+	height: 11rem;
+	overflow: hidden;
+	border-width: 2px;
 }
 
-.image.headshot img {
+#header .logo.headshot img {
+	display: block;
 	width: 100%;
-	border-radius: 50%;
-	aspect-ratio: 1 / 1;
+	height: 100%;
 	object-fit: cover;
-	object-position: center 30%;
+	object-position: 50% 42%;
+	transform: scale(1.9);
+	transform-origin: 50% 42%;
+}
+
+@media screen and (max-width: 480px) {
+	#header .logo.headshot {
+		width: 8rem;
+		height: 8rem;
+	}
+}
+
+/* Dated entries (teaching, outreach) */
+ul.entries li,
+ul.pubs li {
+	line-height: 1.6;
+	padding: 0.85rem 0;
+}
+
+ul.entries .when {
+	display: block;
+	font-size: 0.7rem;
+	letter-spacing: 0.15rem;
+	text-transform: uppercase;
+	opacity: 0.65;
+	margin-bottom: 0.2rem;
+}
+
+ul.entries .when:empty {
+	display: none;
 }
 
 /* Gallery */
@@ -109,4 +138,12 @@ ul.contact-links li {
 ul.contact-links .icon {
 	margin-right: 0.75rem;
 	border-bottom: 0;
+}
+
+/* Long article titles ("Teaching & Outreach") on phones */
+@media screen and (max-width: 480px) {
+	#main article h2.major {
+		letter-spacing: 0.25rem;
+		font-size: 1.1rem;
+	}
 }
